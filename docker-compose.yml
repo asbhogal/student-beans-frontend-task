@@ -1,6 +1,7 @@
 version: '3'
 services:
   web:
+    mem_limit: 512M
     volumes:
      - ./app:/app
      - /app/node_modules
