@@ -13,18 +13,18 @@ export default {
     flexWrap: 'wrap',
     justifyContent: 'flex-start',
     alignContent: 'stretch',
-    alignItems: 'flex-start',
+    alignItems: 'flex-start'
   },
 
   image: {
     order: '1',
     flex: '1 0 60%',
-    alignSelf: 'flex-start',
+    alignSelf: 'flex-start'
   },
 
   text: {
     order: '2',
     flex: '1 0 40%',
-    alignSelf: 'flex-start',
-  },
+    alignSelf: 'flex-start'
+  }
 }
