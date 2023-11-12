@@ -21,11 +21,11 @@ const App = (props) => {
             className="owner-profile-pic"
             style={styles.profileImg}
             src={data.owner.profile_pic_url}
-            alt="AVFC Logo"
+            alt="The Aston Villa Football Club logo, with the emblem surrounded by a multicolored ring, tinted red in the top left and orange in the bottom right"
           />
           <div>
-            <h2>OWNER USERNAME</h2>
-            <p>OWNER POST LOCATION</p>
+            <h2>{data.owner.username}</h2>
+            <p>{data.location.name}</p>
           </div>
         </div>
         <div>
