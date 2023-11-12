@@ -19,7 +19,8 @@ export default {
   image: {
     order: '1',
     flex: '1 0 60%',
-    alignSelf: 'flex-start'
+    alignSelf: 'flex-start',
+    backgroundColor: '#fafafa'
   },
 
   text: {
