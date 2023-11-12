@@ -9,8 +9,8 @@
     "standard": "^17.1.0"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
+    "start": "CHOKIDAR_USEPOLLING=true react-scripts start",
+    "build": "standard --fix && react-scripts build",
     "test": "standard --fix && react-scripts test --watchAll",
     "eject": "react-scripts eject"
   },
