@@ -8,7 +8,28 @@ import LikedIcon from './children/like_button/children/liked_icon'
 const App = (props) => {
   const { data } = props
 
-  // console.log(data)
+  console.log(data)
+  //console.log(data.edge_media_to_comment.edges)
+  //console.log(data.edge_media_to_comment.edges)
+
+  const comments = data.edge_media_to_comment.edges
+
+  const userComments = {}
+
+  comments.forEach((comment) => {
+    const userId = comment.node.owner.id
+    const text = comment.node.text
+    const username = comment.node.username
+
+    if (!userComments[username]) {
+      userComments[userId] = {
+        username: comment.node.owner.username,
+        comments: []
+      }
+    }
+
+    userComments[userId].comments.push(text)
+  })
 
   return (
     <main style={styles.main}>
@@ -39,6 +60,25 @@ const App = (props) => {
                 <UnlikedIcon />
               </button>
             </div>
+
+            <ul style={{ listStyleType: 'none', paddingLeft: 0 }}>
+              {Object.keys(userComments).map((userId) => (
+                <li style={styles.comments} key={userId}>
+                  <span>
+                    <span style={styles.users}>
+                      {userComments[userId].username}
+                    </span>
+                    {userComments[userId].comments.map((text, index) => (
+                      <span key={index}>{text}</span>
+                    ))}
+                  </span>
+                  <button style={styles.button}>
+                    <UnlikedIcon />
+                  </button>
+                </li>
+              ))}
+            </ul>
+
             <div style={styles.comments}>
               <div>
                 <p style={styles.users}>6,244 likes</p>

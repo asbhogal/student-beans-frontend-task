@@ -47,7 +47,8 @@ export default {
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'space-between',
-    gap: '.3125rem'
+    gap: '.3125rem',
+    fontSize: '.875rem'
   },
 
   commentsList: {
@@ -55,7 +56,8 @@ export default {
   },
 
   users: {
-    fontWeight: 'bold'
+    fontWeight: 'bold',
+    marginRight: '.3125rem'
   },
 
   button: {
