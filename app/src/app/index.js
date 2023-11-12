@@ -57,7 +57,15 @@ const App = (props) => {
               <p>{data.edge_media_to_caption.edges[0].node.text}</p>
             </div>
 
-            <ul style={{ listStyleType: 'none', paddingLeft: 0 }}>
+            <ul
+              style={{
+                listStyleType: 'none',
+                paddingLeft: 0,
+                display: 'flex',
+                flexDirection: 'column',
+                gap: '.125rem'
+              }}
+            >
               {Object.keys(userComments).map((userId) => (
                 <li style={styles.comments} key={userId}>
                   <span>

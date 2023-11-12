@@ -5,7 +5,7 @@ export default {
     borderBottomRightRadius: '.1875rem',
     borderTopRightRadius: '.1875rem',
     maxWidth: '58.4375rem',
-    margin: '1rem auto',
+    margin: '3rem auto',
     width: 'calc(100% - 2.5rem)',
 
     display: 'flex',
