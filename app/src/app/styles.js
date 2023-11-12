@@ -1,30 +1,30 @@
 export default {
   main: {
     backgroundColor: '#fff',
-    border: '1px solid #e6e6e6',
-    borderBottomRightRadius: '3px',
-    borderTopRightRadius: '3px',
-    maxWidth: '935px',
-    margin: '16px auto',
-    width: 'calc(100% - 40px)',
+    border: '.0625rem solid #e6e6e6',
+    borderBottomRightRadius: '.1875rem',
+    borderTopRightRadius: '.1875rem',
+    maxWidth: '58.4375rem',
+    margin: '1rem auto',
+    width: 'calc(100% - 2.5rem)',
 
     display: 'flex',
     flexDirection: 'row',
     flexWrap: 'wrap',
     justifyContent: 'flex-start',
     alignContent: 'stretch',
-    alignItems: 'flex-start'
+    alignItems: 'flex-start',
   },
 
   image: {
     order: '1',
     flex: '1 0 60%',
-    alignSelf: 'flex-start'
+    alignSelf: 'flex-start',
   },
 
   text: {
     order: '2',
     flex: '1 0 40%',
-    alignSelf: 'flex-start'
-  }
+    alignSelf: 'flex-start',
+  },
 }
