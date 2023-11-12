@@ -68,7 +68,7 @@ export default {
 
   date: {
     textTransform: 'uppercase',
-    color: '#a2a2a2',
+    color: '#595959',
     fontSize: '.625rem',
     marginTop: '.3125rem'
   }
