@@ -7,6 +7,9 @@ import LikedIcon from './children/like_button/children/liked_icon'
 
 const App = (props) => {
   const { data } = props
+
+  // console.log(data)
+
   return (
     <main style={styles.main}>
       <div style={styles.image}>
@@ -15,13 +18,14 @@ const App = (props) => {
       <div style={styles.text}>
         <div style={styles.profile}>
           <img
+            className="owner-profile-pic"
             style={styles.profileImg}
             src={data.owner.profile_pic_url}
             alt="AVFC Logo"
           />
           <div>
-            <h2>avfcofficial</h2>
-            <p>Villa Park, England</p>
+            <h2>OWNER USERNAME</h2>
+            <p>OWNER POST LOCATION</p>
           </div>
         </div>
         <div>
