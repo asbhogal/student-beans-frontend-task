@@ -54,6 +54,7 @@ const App = (props) => {
 
   return (
     <main style={styles.main}>
+      <h1 className="sr-only">avfcofficial Instagram Post</h1>
       <div style={styles.image}>
         <Image data={data} />
       </div>
