@@ -32,10 +32,9 @@ export default {
   profile: {
     display: 'flex',
     alignItems: 'center',
-    gap: '1rem',
-    margin: '.625rem',
-    borderBottom: '.0625rem solid #eeeeef',
-    padding: '1.25rem 0'
+    gap: '0.5rem',
+    padding: '1rem 1.25rem',
+    borderBottom: '.0625rem solid #eeeeef'
   },
 
   profileImg: {
@@ -48,11 +47,12 @@ export default {
     alignItems: 'center',
     justifyContent: 'space-between',
     gap: '.3125rem',
-    fontSize: '.875rem'
+    fontSize: '.875rem',
+    marginRight: '.625rem'
   },
 
   commentsList: {
-    margin: '0 .625rem'
+    margin: '.625rem 1.25rem'
   },
 
   users: {

@@ -71,18 +71,19 @@ const App = (props) => {
           </div>
         </div>
         <div style={styles.commentsList}>
-          <div>
-            <p style={styles.users}>{data.owner.username}</p>
-            <p>{data.edge_media_to_caption.edges[0].node.text}</p>
-          </div>
-          <div style={{ maxHeight: '18rem', overflowY: 'auto' }}>
+          <div style={{ maxHeight: '19rem', overflowY: 'auto' }}>
+            <span style={{ fontSize: '.875rem' }}>
+              <span style={styles.users}>{data.owner.username}</span>
+              <span>{data.edge_media_to_caption.edges[0].node.text}</span>
+            </span>
             <ul
               style={{
                 listStyleType: 'none',
                 paddingLeft: 0,
                 display: 'flex',
                 flexDirection: 'column',
-                gap: '.125rem'
+                gap: '.125rem',
+                margin: '0'
               }}
             >
               {Object.keys(userComments).map((userId) => (
