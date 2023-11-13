@@ -62,6 +62,28 @@ const App = (props) => {
     return commentLikes[userId]?.isLiked || false
   }
 
+  const styleHashtagText = (text) => {
+    const hashtagRegex = /#\S+/g
+    const words = text.split(hashtagRegex)
+    const hashtags = text.match(hashtagRegex) || []
+
+    return words.map((word, index) => (
+      <span key={index}>
+        {word}
+        {hashtags[index] && (
+          <a
+            href={`http://instagram.com/explore/tags/${hashtags[index]}`}
+            target="_blank"
+            rel="noreferrer"
+            style={styles.hashtags}
+          >
+            {hashtags[index]}
+          </a>
+        )}
+      </span>
+    ))
+  }
+
   return (
     <main style={styles.main}>
       <h1 className="sr-only">avfcofficial Instagram Post</h1>
@@ -86,7 +108,9 @@ const App = (props) => {
             <span>
               <span style={styles.users}>{data.owner.username}</span>
               <span style={styles.ownerCaption}>
-                {data.edge_media_to_caption.edges[0].node.text}
+                {styleHashtagText(
+                  data.edge_media_to_caption.edges[0].node.text
+                )}
               </span>
             </span>
             <ul style={styles.commentsUl}>
@@ -97,7 +121,7 @@ const App = (props) => {
                       {userComments[userId].username}
                     </span>
                     {userComments[userId].comments.map((text, index) => (
-                      <span key={index}>{text}</span>
+                      <span key={index}>{styleHashtagText(text)}</span>
                     ))}
                   </span>
                   <button

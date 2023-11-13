@@ -75,6 +75,12 @@ export default {
     width: 'fit-content'
   },
 
+  hashtags: {
+    color: '#103770',
+    cursor: 'pointer',
+    textDecoration: 'none'
+  },
+
   users: {
     fontWeight: 'bold',
     marginRight: '.3125rem'
