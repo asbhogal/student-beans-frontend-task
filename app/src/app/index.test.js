@@ -48,7 +48,7 @@ it('renders owner username and location data successfully from data.json', () =>
   ReactDOM.unmountComponentAtNode(div)
 })
 
-it('should toggle aria-pressed between false and true when button clicked', () => {
+it('should toggle aria-checked between false and true when button clicked', () => {
   // Create a container element for rendering the component
   const container = document.createElement('div')
 
@@ -60,24 +60,24 @@ it('should toggle aria-pressed between false and true when button clicked', () =
   // Retrieve the button element from the rendered component
   const button = container.querySelector('button')
 
-  // Assert that aria-pressed should initially be set to 'false'
-  expect(button.getAttribute('aria-pressed')).toBe('false')
+  // Assert that aria-checked should initially be set to 'false'
+  expect(button.getAttribute('aria-checked')).toBe('false')
 
   // Simulate a button click within an act block
   act(() => {
     button.click()
   })
 
-  // Assert that aria-pressed should be 'true' after first button click
-  expect(button.getAttribute('aria-pressed')).toBe('true')
+  // Assert that aria-checked should be 'true' after first button click
+  expect(button.getAttribute('aria-checked')).toBe('true')
 
   // Simulate another button click within an act block
   act(() => {
     button.click()
   })
 
-  // Assert that aria-pressed should be 'false' after second button click
-  expect(button.getAttribute('aria-pressed')).toBe('false')
+  // Assert that aria-checked should be 'false' after second button click
+  expect(button.getAttribute('aria-checked')).toBe('false')
 })
 
 it('should increment or decrement total likes on button toggled', () => {
