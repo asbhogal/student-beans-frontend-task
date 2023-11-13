@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import Image from './children/image'
-import LikeButton from './children/like_button'
 import styles from './styles'
 import UnlikedIcon from './children/like_button/children/unliked_icon'
 import LikedIcon from './children/like_button/children/liked_icon'
@@ -54,17 +53,17 @@ const App = (props) => {
 
   return (
     <main style={styles.main}>
-      <h1 className="sr-only">avfcofficial Instagram Post</h1>
+      <h1 className='sr-only'>avfcofficial Instagram Post</h1>
       <div style={styles.image}>
         <Image data={data} />
       </div>
       <div style={styles.text}>
         <div style={styles.profile}>
           <img
-            className="owner-profile-pic"
+            className='owner-profile-pic'
             style={styles.profileImg}
             src={data.owner.profile_pic_url}
-            alt="The Aston Villa Football Club logo, with the emblem surrounded by a multicolored ring, tinted red in the top left and orange in the bottom right"
+            alt='The Aston Villa Football Club logo, with the emblem surrounded by a multicolored ring, tinted red in the top left and orange in the bottom right'
           />
           <div>
             <h2>{data.owner.username}</h2>
@@ -95,11 +94,13 @@ const App = (props) => {
                     onClick={() => handleLikeButtonClick(userId)}
                     aria-pressed={handleAriaPressed(userId)}
                   >
-                    {commentLikes[userId] && commentLikes[userId].isLiked ? (
-                      <LikedIcon />
-                    ) : (
-                      <UnlikedIcon />
-                    )}
+                    {commentLikes[userId] && commentLikes[userId].isLiked
+                      ? (
+                        <LikedIcon />
+                        )
+                      : (
+                        <UnlikedIcon />
+                        )}
                   </button>
                 </li>
               ))}
