@@ -1,22 +1,14 @@
 # Student Beans Frontend Task
 
-![Task Image](./task-image.png)
+A take home project for the mid-level role of JavaScript Engineer at Student Beans. This task involved rendering an Instagram post to as faithful an adaptation of the mockup provided as possible. 
 
-## Task
+<strong>Features:</strong>
+- Dynamic rendering of owner, user (comment and username) and total like data
+- Aria states for like/unlike button states
+- Modern CSS Reset to baseline styles
+- Standard.js for linting
+- Unit tests written using Jest (rendering, aria states)
+- Meta tags for Accessibility and SEO
 
-Complete this React app that recreates the above mockup. All required data and images exist within the repo. At a minimum your solution should:
-
-* Use the existing component structure to organise your code
-* Use Standard.js to lint your code
-* Look as visually as close to the mockup as possible
-
-Beyond this feel free to improve or extend the app as you see fit
-
-## Running the app
-
-1. Run `docker-compose up`
-2. That's it. The app will be running on port `3000` of your docker machine.
-
-## To submit
-
-Fork this and commit your work into any public repo (Github, Gitlab, Bitbucket etc.)
+<strong>Scores</strong>
+- 100 Accessibility (Lighthouse)
