@@ -1,6 +1,8 @@
 /* global it */
+/* eslint-env jest */
 import React from 'react'
 import ReactDOM from 'react-dom'
+import { act } from 'react-dom/test-utils'
 import data from '../data.json'
 import App from './index.js'
 
@@ -44,4 +46,36 @@ it('renders owner username and location data successfully from data.json', () =>
 
   // Clean up - unmount component from div to avoid memory leaks
   ReactDOM.unmountComponentAtNode(div)
+})
+
+it('should toggle aria-pressed between false and true when button clicked', () => {
+  // Create a container element for rendering the component
+  const container = document.createElement('div')
+
+  // Render the component and handle any side effects within an act block
+  act(() => {
+    ReactDOM.render(<App data={data} />, container)
+  })
+
+  // Retrieve the button element from the rendered component
+  const button = container.querySelector('button')
+
+  // Assert aria-pressed should initially be set to 'false'
+  expect(button.getAttribute('aria-pressed')).toBe('false')
+
+  // Simulate a button click within an act block
+  act(() => {
+    button.click()
+  })
+
+  // Assert aria-pressed should be 'true' after first button click
+  expect(button.getAttribute('aria-pressed')).toBe('true')
+
+  // Simulate another button click within an act block
+  act(() => {
+    button.click()
+  })
+
+  // Assert aria-pressed should be 'false' after second button click
+  expect(button.getAttribute('aria-pressed')).toBe('false')
 })
