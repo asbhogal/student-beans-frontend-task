@@ -3,7 +3,7 @@ import React from 'react'
 const UnlikedIcon = (props) => {
   return (
     <svg
-      aria-label=""
+      aria-label="Unliked comment"
       color="#8e8e8e"
       fill="#8e8e8e"
       height="18"

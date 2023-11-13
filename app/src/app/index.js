@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Image from './children/image'
 import LikeButton from './children/like_button'
 import styles from './styles'
@@ -7,11 +7,14 @@ import LikedIcon from './children/like_button/children/liked_icon'
 import formatNumber from './utils/formatNumber'
 
 const App = (props) => {
+  const [commentLikes, setCommentLikes] = useState({})
+  const [ariaPressed, setAriaPressed] = useState(false)
+
   const { data } = props
 
-  console.log(data)
-  //console.log(data.edge_media_to_comment.edges)
-  //console.log(data.edge_media_to_comment.edges)
+  // console.log(data)
+  // console.log(data.edge_media_to_comment.edges)
+  // console.log(data.edge_media_to_comment.edges)
 
   const comments = data.edge_media_to_comment.edges
 
@@ -30,7 +33,29 @@ const App = (props) => {
     }
 
     userComments[userId].comments.push(text)
+
+    if (!commentLikes[userId]) {
+      setCommentLikes((prevLikes) => ({
+        ...prevLikes,
+        [userId]: {
+          isLiked: false
+        }
+      }))
+    }
   })
+
+  const handleLikeButtonClick = (userId) => {
+    setCommentLikes((prevLikes) => ({
+      ...prevLikes,
+      [userId]: {
+        isLiked: !prevLikes[userId]?.isLiked
+      }
+    }))
+  }
+
+  const handleAriaPressed = (userId) => {
+    return commentLikes[userId]?.isLiked || false
+  }
 
   return (
     <main style={styles.main}>
@@ -76,8 +101,16 @@ const App = (props) => {
                       <span key={index}>{text}</span>
                     ))}
                   </span>
-                  <button style={styles.button}>
-                    <UnlikedIcon />
+                  <button
+                    style={styles.button}
+                    onClick={() => handleLikeButtonClick(userId)}
+                    aria-pressed={handleAriaPressed(userId)}
+                  >
+                    {commentLikes[userId] && commentLikes[userId].isLiked ? (
+                      <LikedIcon />
+                    ) : (
+                      <UnlikedIcon />
+                    )}
                   </button>
                 </li>
               ))}
