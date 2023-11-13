@@ -68,27 +68,18 @@ const App = (props) => {
           />
           <div>
             <h2>{data.owner.username}</h2>
-            <p style={{ fontSize: '.75rem' }}>{data.location.name}</p>
+            <p style={styles.location}>{data.location.name}</p>
           </div>
         </div>
         <div style={styles.commentsList}>
-          <div style={{ maxHeight: '19rem', overflowY: 'auto' }}>
-            <span style={{ fontSize: '.875rem' }}>
+          <div style={styles.commentsBox}>
+            <span>
               <span style={styles.users}>{data.owner.username}</span>
-              <span style={{ whiteSpace: 'pre' }}>
+              <span style={styles.ownerCaption}>
                 {data.edge_media_to_caption.edges[0].node.text}
               </span>
             </span>
-            <ul
-              style={{
-                listStyleType: 'none',
-                paddingLeft: 0,
-                display: 'flex',
-                flexDirection: 'column',
-                gap: '.125rem',
-                margin: '0'
-              }}
-            >
+            <ul style={styles.commentsUl}>
               {Object.keys(userComments).map((userId) => (
                 <li style={styles.comments} key={userId}>
                   <span>

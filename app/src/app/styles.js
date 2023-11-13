@@ -23,10 +23,15 @@ export default {
     backgroundColor: '#fafafa'
   },
 
+  location: {
+    fontSize: '.75rem'
+  },
+
   text: {
     order: '2',
     flex: '1 0 40%',
-    alignSelf: 'flex-start'
+    alignSelf: 'flex-start',
+    width: '100%'
   },
 
   profile: {
@@ -47,12 +52,27 @@ export default {
     alignItems: 'center',
     justifyContent: 'space-between',
     gap: '.3125rem',
-    fontSize: '.875rem',
     marginRight: '.625rem'
   },
 
   commentsList: {
     margin: '.625rem 1.25rem'
+  },
+
+  commentsBox: {
+    maxHeight: '19.3125rem',
+    overflowY: 'auto',
+    fontSize: '.875rem'
+  },
+
+  commentsUl: {
+    listStyleType: 'none',
+    paddingLeft: 0,
+    display: 'flex',
+    flexDirection: 'column',
+    gap: '.125rem',
+    margin: '0',
+    width: 'fit-content'
   },
 
   users: {
@@ -73,5 +93,9 @@ export default {
     color: '#595959',
     fontSize: '.625rem',
     marginTop: '.3125rem'
+  },
+
+  ownerCaption: {
+    whiteSpace: 'pre'
   }
 }
