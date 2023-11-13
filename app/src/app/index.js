@@ -58,23 +58,23 @@ const App = (props) => {
     })
   }
 
-  const handleAriaPressed = (userId) => {
+  const handleAriaChecked = (userId) => {
     return commentLikes[userId]?.isLiked || false
   }
 
   return (
     <main style={styles.main}>
-      <h1 className='sr-only'>avfcofficial Instagram Post</h1>
+      <h1 className="sr-only">avfcofficial Instagram Post</h1>
       <div style={styles.image}>
         <Image data={data} />
       </div>
       <div style={styles.text}>
         <div style={styles.profile}>
           <img
-            className='owner-profile-pic'
+            className="owner-profile-pic"
             style={styles.profileImg}
             src={data.owner.profile_pic_url}
-            alt='The Aston Villa Football Club logo, with the emblem surrounded by a multicolored ring, tinted red in the top left and orange in the bottom right'
+            alt="The Aston Villa Football Club logo, with the emblem surrounded by a multicolored ring, tinted red in the top left and orange in the bottom right"
           />
           <div>
             <h2>{data.owner.username}</h2>
@@ -101,17 +101,16 @@ const App = (props) => {
                     ))}
                   </span>
                   <button
+                    role="switch"
                     style={styles.button}
                     onClick={() => handleLikeButtonClick(userId)}
-                    aria-pressed={handleAriaPressed(userId)}
+                    aria-checked={handleAriaChecked(userId)}
                   >
-                    {commentLikes[userId] && commentLikes[userId].isLiked
-                      ? (
-                        <LikedIcon />
-                        )
-                      : (
-                        <UnlikedIcon />
-                        )}
+                    {commentLikes[userId] && commentLikes[userId].isLiked ? (
+                      <LikedIcon />
+                    ) : (
+                      <UnlikedIcon />
+                    )}
                   </button>
                 </li>
               ))}
@@ -123,9 +122,10 @@ const App = (props) => {
               <p style={styles.date}>4 days ago</p>
             </div>
             <button
+              role="switch"
               style={styles.button}
               onClick={handleTotalLikeButtonClick}
-              aria-pressed={totalLikes === 1}
+              aria-checked={totalLikes === 1}
             >
               {totalLikes === 1 ? <LikedIcon /> : <UnlikedIcon />}
             </button>
