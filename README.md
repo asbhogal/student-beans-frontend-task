@@ -21,7 +21,7 @@ A take home project for the mid-level role of JavaScript Engineer at Student Bea
 - 100 Accessibility (Lighthouse)
 - Grade A - 100% Performance (GTmetrix)
 
-<strong>Stacks Used</strong>
+<strong>Stacks Used:</strong>
 
 <a target="_blank" rel="noopener noreferrer" href="https://github.com/devicons/devicon/blob/master/icons/react/react-original.svg"><img src="https://github.com/devicons/devicon/blob/master/icons/react/react-original.svg" alt="React logo" width="50" height="50" style="max-width:100%;"></a>
 <a target="_blank" rel="noopener noreferrer" href="https://github.com/devicons/devicon/blob/master/icons/css3/css3-original.svg"><img src="https://github.com/devicons/devicon/raw/master/icons/css3/css3-original.svg" alt="CSS3 logo" width="50" height="50" style="max-width:100%;"></a>
@@ -29,3 +29,6 @@ A take home project for the mid-level role of JavaScript Engineer at Student Bea
 <a target="_blank" rel="noopener noreferrer" href="https://github.com/devicons/devicon/blob/master/icons/docker/docker-plain.svg"><img src="https://github.com/devicons/devicon/blob/master/icons/docker/docker-plain.svg" alt="Docker logo" width="50" height="50" style="max-width:100%;"></a>
 <a target="_blank" rel="noopener noreferrer" href="https://cdn.rawgit.com/standard/standard/master/sticker.svg"><img src="https://cdn.rawgit.com/standard/standard/master/sticker.svg" alt="StandardJS logo" width="50" height="50" style="max-width:100%;"></a>
 <a target="_blank" rel="noopener noreferrer" href="https://github.com/devicons/devicon/blob/master/icons/jest/jest-plain.svg"><img src="https://github.com/devicons/devicon/blob/master/icons/jest/jest-plain.svg" alt="StandardJS logo" width="50" height="50" style="max-width:100%;"></a>
+
+<strong>Links:</strong>
+ - <a target="_blank" href="https://student-beans-frontend-task.vercel.app/">Live Deployment</a>
