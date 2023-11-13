@@ -74,7 +74,9 @@ const App = (props) => {
           <div style={{ maxHeight: '19rem', overflowY: 'auto' }}>
             <span style={{ fontSize: '.875rem' }}>
               <span style={styles.users}>{data.owner.username}</span>
-              <span>{data.edge_media_to_caption.edges[0].node.text}</span>
+              <span style={{ whiteSpace: 'pre' }}>
+                {data.edge_media_to_caption.edges[0].node.text}
+              </span>
             </span>
             <ul
               style={{
