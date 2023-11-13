@@ -6,9 +6,11 @@ import LikedIcon from './children/like_button/children/liked_icon'
 import formatNumber from './utils/formatNumber'
 
 const App = (props) => {
-  const [commentLikes, setCommentLikes] = useState({})
-
   const { data } = props
+
+  const [commentLikes, setCommentLikes] = useState({})
+  const [totalLikes, setTotalLikes] = useState(0)
+  const [likeCount, setLikeCount] = useState(data.edge_media_preview_like.count)
 
   const comments = data.edge_media_to_comment.edges
 
@@ -45,6 +47,15 @@ const App = (props) => {
         isLiked: !prevLikes[userId]?.isLiked
       }
     }))
+  }
+
+  const handleTotalLikeButtonClick = () => {
+    setTotalLikes((prevTotalLikes) => {
+      const newTotalLikes = prevTotalLikes === 0 ? 1 : 0
+      const newCount = newTotalLikes === 1 ? likeCount + 1 : likeCount - 1
+      setLikeCount(newCount)
+      return newTotalLikes
+    })
   }
 
   const handleAriaPressed = (userId) => {
@@ -108,12 +119,16 @@ const App = (props) => {
           </div>
           <div style={styles.comments}>
             <div>
-              <p style={styles.users}>
-                {formatNumber(data.edge_media_preview_like.count)} likes
-              </p>
+              <p style={styles.users}>{formatNumber(likeCount)} likes</p>
               <p style={styles.date}>4 days ago</p>
             </div>
-            <UnlikedIcon />
+            <button
+              style={styles.button}
+              onClick={handleTotalLikeButtonClick}
+              aria-pressed={totalLikes === 1}
+            >
+              {totalLikes === 1 ? <LikedIcon /> : <UnlikedIcon />}
+            </button>
           </div>
         </div>
       </div>
