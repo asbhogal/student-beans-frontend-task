@@ -60,7 +60,7 @@ it('should toggle aria-pressed between false and true when button clicked', () =
   // Retrieve the button element from the rendered component
   const button = container.querySelector('button')
 
-  // Assert aria-pressed should initially be set to 'false'
+  // Assert that aria-pressed should initially be set to 'false'
   expect(button.getAttribute('aria-pressed')).toBe('false')
 
   // Simulate a button click within an act block
@@ -68,7 +68,7 @@ it('should toggle aria-pressed between false and true when button clicked', () =
     button.click()
   })
 
-  // Assert aria-pressed should be 'true' after first button click
+  // Assert that aria-pressed should be 'true' after first button click
   expect(button.getAttribute('aria-pressed')).toBe('true')
 
   // Simulate another button click within an act block
@@ -76,6 +76,44 @@ it('should toggle aria-pressed between false and true when button clicked', () =
     button.click()
   })
 
-  // Assert aria-pressed should be 'false' after second button click
+  // Assert that aria-pressed should be 'false' after second button click
   expect(button.getAttribute('aria-pressed')).toBe('false')
+})
+
+it('should increment or decrement total likes on button toggled', () => {
+  // Create a container element for rendering the component
+  const container = document.createElement('div')
+
+  // Render the component and handle any side effects within an act block
+  act(() => {
+    ReactDOM.render(<App data={data} />, container)
+  })
+
+  // Get the initial like count
+  const initialLikeCount = parseInt(
+    container.querySelector('p').textContent,
+    10
+  )
+
+  // Get the total like button
+  const totalLikeButton = container.querySelector('button')
+
+  // Simulate a click on the total like button (increment)
+  totalLikeButton.click()
+
+  // Assert that the like count has been incremented
+  expect(parseInt(container.querySelector('p').textContent, 10)).toBe(
+    initialLikeCount + 1
+  )
+
+  // Simulate another click on the total like button (decrement)
+  totalLikeButton.click()
+
+  // Assert that the like count has been decremented back to the initial value
+  expect(parseInt(container.querySelector('p').textContent, 10)).toBe(
+    initialLikeCount
+  )
+
+  // Unmount component and clean up after the test
+  ReactDOM.unmountComponentAtNode(container)
 })
