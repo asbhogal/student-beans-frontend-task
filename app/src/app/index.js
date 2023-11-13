@@ -8,7 +8,6 @@ import formatNumber from './utils/formatNumber'
 
 const App = (props) => {
   const [commentLikes, setCommentLikes] = useState({})
-  const [ariaPressed, setAriaPressed] = useState(false)
 
   const { data } = props
 
