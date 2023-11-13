@@ -11,10 +11,6 @@ const App = (props) => {
 
   const { data } = props
 
-  // console.log(data)
-  // console.log(data.edge_media_to_comment.edges)
-  // console.log(data.edge_media_to_comment.edges)
-
   const comments = data.edge_media_to_comment.edges
 
   const userComments = {}
@@ -74,13 +70,12 @@ const App = (props) => {
             <p>{data.location.name}</p>
           </div>
         </div>
-        <div>
-          <div style={styles.commentsList}>
-            <div>
-              <p style={styles.users}>{data.owner.username}</p>
-              <p>{data.edge_media_to_caption.edges[0].node.text}</p>
-            </div>
-
+        <div style={styles.commentsList}>
+          <div>
+            <p style={styles.users}>{data.owner.username}</p>
+            <p>{data.edge_media_to_caption.edges[0].node.text}</p>
+          </div>
+          <div style={{ maxHeight: '18rem', overflowY: 'auto' }}>
             <ul
               style={{
                 listStyleType: 'none',
@@ -114,16 +109,15 @@ const App = (props) => {
                 </li>
               ))}
             </ul>
-
-            <div style={styles.comments}>
-              <div>
-                <p style={styles.users}>
-                  {formatNumber(data.edge_media_preview_like.count)} likes
-                </p>
-                <p style={styles.date}>4 days ago</p>
-              </div>
-              <LikeButton />
+          </div>
+          <div style={styles.comments}>
+            <div>
+              <p style={styles.users}>
+                {formatNumber(data.edge_media_preview_like.count)} likes
+              </p>
+              <p style={styles.date}>4 days ago</p>
             </div>
+            <LikeButton />
           </div>
         </div>
       </div>
