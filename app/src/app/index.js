@@ -67,7 +67,7 @@ const App = (props) => {
           />
           <div>
             <h2>{data.owner.username}</h2>
-            <p>{data.location.name}</p>
+            <p style={{ fontSize: '.75rem' }}>{data.location.name}</p>
           </div>
         </div>
         <div style={styles.commentsList}>
@@ -120,7 +120,7 @@ const App = (props) => {
               </p>
               <p style={styles.date}>4 days ago</p>
             </div>
-            <LikeButton />
+            <UnlikedIcon />
           </div>
         </div>
       </div>
