@@ -14,9 +14,13 @@ const App = (props) => {
 
   const comments = data.edge_media_to_comment.edges
 
+  const sortedComments = comments
+    .slice()
+    .sort((a, b) => b.node.taken_at_timestamp - a.node.taken_at_timestamp)
+
   const userComments = {}
 
-  comments.forEach((comment) => {
+  sortedComments.forEach((comment) => {
     const userId = comment.node.owner.id
     const text = comment.node.text
     const username = comment.node.username
@@ -114,23 +118,28 @@ const App = (props) => {
               </span>
             </span>
             <ul style={styles.commentsUl}>
-              {Object.keys(userComments).map((userId) => (
-                <li style={styles.comments} key={userId}>
+              {sortedComments.map((comment) => (
+                <li
+                  style={styles.comments}
+                  key={`${comment.node.owner.id}-${comment.node.text}`}
+                >
                   <span>
                     <span style={styles.users}>
-                      {userComments[userId].username}
+                      {comment.node.owner.username}
                     </span>
-                    {userComments[userId].comments.map((text, index) => (
-                      <span key={index}>{styleHashtagText(text)}</span>
-                    ))}
+                    {userComments[comment.node.owner.id]?.comments.map(
+                      (text, index) => (
+                        <span key={index}>{styleHashtagText(text)}</span>
+                      )
+                    )}
                   </span>
                   <button
                     role="switch"
                     style={styles.button}
-                    onClick={() => handleLikeButtonClick(userId)}
-                    aria-checked={handleAriaChecked(userId)}
+                    onClick={() => handleLikeButtonClick(comment.node.owner.id)}
+                    aria-checked={handleAriaChecked(comment.node.owner.id)}
                   >
-                    {commentLikes[userId] && commentLikes[userId].isLiked ? (
+                    {commentLikes[comment.node.owner.id]?.isLiked ? (
                       <LikedIcon />
                     ) : (
                       <UnlikedIcon />
