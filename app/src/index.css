@@ -5,7 +5,7 @@ body {
   background-color: #fafafa;
   margin: 0;
   padding: 0;
-  font-family: 'Noto Sans', sans-serif;
+  font-family: 'Noto Sans Display', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -38,4 +38,24 @@ svg {
   clip: rect(0, 0, 0, 0);
   white-space: nowrap;
   border-width: 0;
+}
+
+/****** NOTO SANS - 400 REGULAR ******/
+
+@font-face {
+  font-family: Noto Sans Display;
+  font-weight: 400;
+  font-style: normal;
+  src: url('./fonts/NotoSansDisplay-Regular.woff2') format('woff2');
+  font-display: swap;
+}
+
+/****** NOTO SANS - 700 BOLD ******/
+
+@font-face {
+  font-family: Noto Sans Display;
+  font-weight: 700;
+  font-style: normal;
+  src: url('./fonts/NotoSansDisplay-Bold.woff2') format('woff2');
+  font-display: swap;
 }
