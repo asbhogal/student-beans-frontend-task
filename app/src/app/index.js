@@ -76,7 +76,7 @@ const App = (props) => {
         {word}
         {hashtags[index] && (
           <a
-            href={`http://instagram.com/explore/tags/${hashtags[index]}`}
+            href={`https://instagram.com/explore/tags/${hashtags[index]}`}
             target="_blank"
             rel="noreferrer"
             style={styles.hashtags}
@@ -124,9 +124,14 @@ const App = (props) => {
                   key={`${comment.node.owner.id}-${comment.node.text}`}
                 >
                   <span>
-                    <span style={styles.users}>
+                    <a
+                      href={`https://instagram.com/${comment.node.owner.username}`}
+                      target="_blank"
+                      rel="noreferrer"
+                      style={styles.users}
+                    >
                       {comment.node.owner.username}
-                    </span>
+                    </a>
                     {userComments[comment.node.owner.id]?.comments.map(
                       (text, index) => (
                         <span key={index}>{styleHashtagText(text)}</span>

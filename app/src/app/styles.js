@@ -83,7 +83,8 @@ export default {
 
   users: {
     fontWeight: 'bold',
-    marginRight: '.3125rem'
+    marginRight: '.3125rem',
+    textDecoration: 'none'
   },
 
   button: {
