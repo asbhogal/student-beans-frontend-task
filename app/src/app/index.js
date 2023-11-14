@@ -75,21 +75,43 @@ const App = (props) => {
       </div>
       <div style={styles.text}>
         <div style={styles.profile}>
-          <img
-            className="owner-profile-pic"
-            style={styles.profileImg}
-            src={data.owner.profile_pic_url}
-            alt="The Aston Villa Football Club logo, with the emblem surrounded by a multicolored ring, tinted red in the top left and orange in the bottom right"
-          />
+          <a
+            href={`https://instagram.com/${data.owner.username}`}
+            target="_blank"
+            rel="noreferrer"
+          >
+            <img
+              className="owner-profile-pic"
+              style={styles.profileImg}
+              src={data.owner.profile_pic_url}
+              alt="The Aston Villa Football Club logo, with the emblem surrounded by a multicolored ring, tinted red in the top left and orange in the bottom right"
+            />
+          </a>
           <div>
-            <h2>{data.owner.username}</h2>
+            <h2>
+              <a
+                style={styles.owner}
+                href={`https://instagram.com/${data.owner.username}`}
+                target="_blank"
+                rel="noreferrer"
+              >
+                {data.owner.username}
+              </a>
+            </h2>
             <p style={styles.location}>{data.location.name}</p>
           </div>
         </div>
         <div style={styles.commentsList}>
           <div style={styles.commentsBox}>
             <span>
-              <span style={styles.users}>{data.owner.username}</span>
+              <a
+                style={styles.users}
+                href={`https://instagram.com/${data.owner.username}`}
+                target="_blank"
+                rel="noreferrer"
+              >
+                {data.owner.username}
+              </a>
               <span style={styles.ownerCaption}>
                 {styleHashtagText(
                   data.edge_media_to_caption.edges[0].node.text

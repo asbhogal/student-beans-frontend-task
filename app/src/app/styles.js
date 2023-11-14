@@ -102,6 +102,10 @@ export default {
     marginTop: '.3125rem'
   },
 
+  owner: {
+    textDecoration: 'none'
+  },
+
   ownerCaption: {
     whiteSpace: 'pre'
   }
