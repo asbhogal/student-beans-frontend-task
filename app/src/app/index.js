@@ -160,7 +160,11 @@ const App = (props) => {
               onClick={handleTotalLikeButtonClick}
               aria-checked={totalLikes === 1}
             >
-              {totalLikes === 1 ? <LikedIcon /> : <UnlikedIcon />}
+              {totalLikes === 1 ? (
+                <LikedIcon size={30} />
+              ) : (
+                <UnlikedIcon size={30} />
+              )}
             </button>
           </div>
         </div>
