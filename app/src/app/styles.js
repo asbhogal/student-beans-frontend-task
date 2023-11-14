@@ -71,7 +71,7 @@ export default {
     display: 'flex',
     flexDirection: 'column',
     gap: '.125rem',
-    margin: '0',
+    margin: '0.125rem 0 0 0',
     width: 'fit-content'
   },
 
