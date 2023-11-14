@@ -69,7 +69,7 @@ const App = (props) => {
 
   return (
     <main style={styles.main}>
-      <h1 className="sr-only">avfcofficial Instagram Post</h1>
+      <h1 className='sr-only'>avfcofficial Instagram Post</h1>
       <div style={styles.image}>
         <Image data={data} />
       </div>
@@ -77,14 +77,14 @@ const App = (props) => {
         <div style={styles.profile}>
           <a
             href={`https://instagram.com/${data.owner.username}`}
-            target="_blank"
-            rel="noreferrer"
+            target='_blank'
+            rel='noreferrer'
           >
             <img
-              className="owner-profile-pic"
+              className='owner-profile-pic'
               style={styles.profileImg}
               src={data.owner.profile_pic_url}
-              alt="The Aston Villa Football Club logo, with the emblem surrounded by a multicolored ring, tinted red in the top left and orange in the bottom right"
+              alt='The Aston Villa Football Club logo, with the emblem surrounded by a multicolored ring, tinted red in the top left and orange in the bottom right'
             />
           </a>
           <div>
@@ -92,8 +92,8 @@ const App = (props) => {
               <a
                 style={styles.owner}
                 href={`https://instagram.com/${data.owner.username}`}
-                target="_blank"
-                rel="noreferrer"
+                target='_blank'
+                rel='noreferrer'
               >
                 {data.owner.username}
               </a>
@@ -107,8 +107,8 @@ const App = (props) => {
               <a
                 style={styles.users}
                 href={`https://instagram.com/${data.owner.username}`}
-                target="_blank"
-                rel="noreferrer"
+                target='_blank'
+                rel='noreferrer'
               >
                 {data.owner.username}
               </a>
@@ -127,8 +127,8 @@ const App = (props) => {
                   <span>
                     <a
                       href={`https://instagram.com/${comment.node.owner.username}`}
-                      target="_blank"
-                      rel="noreferrer"
+                      target='_blank'
+                      rel='noreferrer'
                       style={styles.users}
                     >
                       {comment.node.owner.username}
@@ -140,16 +140,18 @@ const App = (props) => {
                     )}
                   </span>
                   <button
-                    role="switch"
+                    role='switch'
                     style={styles.button}
                     onClick={() => handleLikeButtonClick(comment.node.owner.id)}
                     aria-checked={handleAriaChecked(comment.node.owner.id)}
                   >
-                    {commentLikes[comment.node.owner.id]?.isLiked ? (
-                      <LikedIcon />
-                    ) : (
-                      <UnlikedIcon />
-                    )}
+                    {commentLikes[comment.node.owner.id]?.isLiked
+                      ? (
+                        <LikedIcon />
+                        )
+                      : (
+                        <UnlikedIcon />
+                        )}
                   </button>
                 </li>
               ))}
@@ -161,16 +163,18 @@ const App = (props) => {
               <p style={styles.date}>4 days ago</p>
             </div>
             <button
-              role="switch"
+              role='switch'
               style={styles.button}
               onClick={handleTotalLikeButtonClick}
               aria-checked={totalLikes === 1}
             >
-              {totalLikes === 1 ? (
-                <LikedIcon size={30} />
-              ) : (
-                <UnlikedIcon size={30} />
-              )}
+              {totalLikes === 1
+                ? (
+                  <LikedIcon size={30} />
+                  )
+                : (
+                  <UnlikedIcon size={30} />
+                  )}
             </button>
           </div>
         </div>

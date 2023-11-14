@@ -11,8 +11,8 @@ const styleHashtagText = (text) => {
       {hashtags[index] && (
         <a
           href={`https://instagram.com/explore/tags/${hashtags[index]}`}
-          target="_blank"
-          rel="noreferrer"
+          target='_blank'
+          rel='noreferrer'
           style={styles.hashtags}
         >
           {hashtags[index]}
